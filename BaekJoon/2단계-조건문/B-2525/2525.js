@@ -11,6 +11,7 @@ const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 let input = fs.readFileSync(filePath).toString().split('\n');
 
+// <내 풀이>
 // 입력 받은 값을 공백 처리 후 배열로 다시 만들기
 input = [input[0] + " " + input[1]];
 
@@ -35,4 +36,31 @@ if(si > 23) {
 }
 
 // 현재 시간 콘솔에 출력
-console.log(si + " " + bun);
+console.log(si, bun);
+
+// 다른 분 풀이
+// const fs = require('fs');
+
+// const input = fs.readFileSync("/dev/stdin").toString().trim().split('\n');
+
+// 현재 시간을 input[0]에서 split 후 map으로 숫자 변환
+// const current = input[0].split(' ').map(Number);
+
+/* current의 0번째 요소 = currentHour */
+// const currentHour = current[0];
+
+/* current의 1번째 요소 = currentMinute */
+// const currentMinute = current[1];
+
+/* input의 1번째 요소 = cookTime */
+// const cookTime = Number(input[1]);
+
+/* 요리가 끝날 때의 시 */
+// const cookEndTimeHour = parseInt((currentHour*60 + currentMinute + cookTime)/ 60) ;
+
+/* 요리가 끝날 때의 분 */
+// const cookEndTimeMinute = parseInt((currentHour*60 + currentMinute + cookTime)% 60);
+
+/* 만약 시가 24 이상이라면 - 24 한 후
+   cookEndTimeHour, cookEndTimeMinute 출력 */
+// console.log(cookEndTimeHour >= 24 ? cookEndTimeHour - 24 : cookEndTimeHour, cookEndTimeMinute);
