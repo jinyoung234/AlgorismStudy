@@ -1,4 +1,6 @@
-let input = 9;
+let input = Number(require('fs').readFileSync('/dev/stdin').toString());
+console.log(input);
+// 1. 들어온 값을 숫자로 변환
 let num = input;
 
 // 2. while을 위한 sum(각 자리수 더한 값), i(사이클 횟수) 세팅
