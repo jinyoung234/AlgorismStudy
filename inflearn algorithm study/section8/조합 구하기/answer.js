@@ -1,19 +1,17 @@
 function solution(n, m) {
-  let answer = [];
-  let combi = [];
-  function DFS(l) {
-    if (l > n + 1) return;
-    if (combi.length === m) {
-      let copy = [...combi];
-      answer.push(copy);
-    } else {
-      combi.push(l);
-      DFS(l + 1);
-      combi.pop();
-      DFS(l + 1);
+  const answer = [];
+  const tmp = [];
+  function DFS(l, s) {
+    if (l === m) answer.push(tmp.slice());
+    else {
+      for (let i = s; i <= n; i++) {
+        tmp.push(i);
+        DFS(l + 1, i + 1);
+        tmp.pop();
+      }
     }
   }
-  DFS(1);
+  DFS(0, 1);
   return answer;
 }
 
