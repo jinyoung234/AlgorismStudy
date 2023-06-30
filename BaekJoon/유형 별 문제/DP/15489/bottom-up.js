@@ -1,3 +1,7 @@
+/**
+ * 파스칼 삼각형
+ * (https://www.notion.so/97e1768540c64402a26d71a40b5f3129)
+ */
 const fs = require("fs");
 const filePath = process.platform === "linux" ? "/dev/stdin" : "input.txt";
 const input = fs.readFileSync(filePath).toString().trim().split("\n");
