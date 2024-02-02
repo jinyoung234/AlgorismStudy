@@ -1,3 +1,7 @@
+/**
+ * 요세푸스 문제
+ * (https://www.notion.so/bba35f78326b426fb28e4de434b1218c?pvs=4)
+ */
 let [n, k] = require('fs')
   .readFileSync(__dirname + '/input.txt')
   .toString()
